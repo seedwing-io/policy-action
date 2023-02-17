@@ -12,16 +12,13 @@ inputs:
     description: Policy name to check
     required: true
   input:
-    description: Input to pass on to the policy checker
+    description: Input to policy checker
     required: true
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - -p 
     - ${{ inputs.policy-dir }}
-    - --name
     - ${{ inputs.name }}
-    - -i
     - ${{ inputs.input }}
