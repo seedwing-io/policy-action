@@ -10,7 +10,4 @@ ret=$?
 echo "Policy check exit code $ret"
 echo "Rationale: $rationale"
 
-echo "rationale='$rationale'" >> $GITHUB_OUTPUT
-
 exit $ret
-

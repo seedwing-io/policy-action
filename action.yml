@@ -14,9 +14,6 @@ inputs:
   input:
     description: File containing the contents input to the policy checker. Relative to the project directory.
     required: true
-outputs:
-  rationale:
-    description: 'Description of the policy decision'
 
 runs:
   using: 'docker'
