@@ -12,7 +12,7 @@ inputs:
     description: Policy name to check
     required: true
   input:
-    description: Input to policy checker
+    description: File containing the contents input to the policy checker. Relative to the project directory.
     required: true
 
 runs:
