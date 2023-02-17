@@ -1,0 +1,27 @@
+name: 'seedwing-action'
+description: 'Apply seedwing policies to your project'
+author: 'seedwing-io team'
+branding:
+  icon: play-circle
+  color: black
+inputs:
+  policy-dir:
+    description: Additional policies to use for enforcement
+    required: true
+  name:
+    description: Policy name to check
+    required: true
+  input:
+    description: Input to pass on to the policy checker
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - -p 
+    - ${{ inputs.policy-dir }}
+    - --name
+    - ${{ inputs.name }}
+    - -i
+    - ${{ inputs.input }}
