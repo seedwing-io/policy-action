@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi9/ubi-minimal:latest
 
-RUN curl -L --output /swio https://github.com/seedwing-io/seedwing-policy/releases/download/v0.1.0-alpha.22/swio-linux-amd64 && chmod 755 /swio
+RUN curl -L --output /senf https://github.com/seedwing-io/seedwing-enforcer/releases/download/v0.1.0-alpha.12/senf-linux-amd64 && chmod 755 /senf
 
 COPY entrypoint.sh /entrypoint.sh
 
