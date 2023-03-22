@@ -1,10 +1,13 @@
 #!/bin/sh
-echo "Policy dir: $1"
-echo "Policy: $2"
-echo "Input file $GITHUB_WORKSPACE/$3"
+echo "Config file: $1"
 echo ""
 
-rationale=$(cat $GITHUB_WORKSPACE/$3 | RUST_LOG=trace /swio eval -p $1 --name "$2")
+ARGS=""
+if [ "$1" != "" ]; then
+    ARGS="-f $1"
+fi
+
+rationale=$(/swio eval $ARGS)
 ret=$?
 
 echo "Policy check exit code $ret"

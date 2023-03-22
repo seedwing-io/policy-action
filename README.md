@@ -1,14 +1,19 @@
-# seedwing-action
+# policy-action
 
-Github Action for Seedwing
+Github Action for Seedwing Policy.
+
+This action can be used to apply any policy to any artifact. To use it, add a `Seedwing.toml` file to your project:
+
+``` 4d
+[policy]
+dirs = ["policies"]
+inputs = ["bom.json"]
+required = ["vulnerabilities::not-affected"]
+```
 
 ## Usage
 
 ```
 - name: Apply company policies
-  uses: seedwing-io/seedwing-action@v1
-  with:
-    policy-dir: policies
-    name: vulnerabilities::not-affected
-    input: bom.json
+  uses: seedwing-io/policy-action@v1
 ```

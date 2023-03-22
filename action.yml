@@ -1,24 +1,15 @@
-name: 'seedwing-action'
+name: 'policy-action'
 description: 'Apply seedwing policies to your project'
 author: 'seedwing-io team'
 branding:
   icon: play-circle
   color: black
 inputs:
-  policy-dir:
-    description: Additional policies to use for enforcement
-    required: true
-  name:
-    description: Policy name to check
-    required: true
-  input:
-    description: File containing the contents input to the policy checker. Relative to the project directory.
-    required: true
+  config:
+    description: Optional location of Seedwing.toml file (project root by default).
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.policy-dir }}
-    - ${{ inputs.name }}
-    - ${{ inputs.input }}
+    - ${{ inputs.config }}
